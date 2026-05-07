@@ -1,0 +1,33 @@
+{
+  "name": "profile",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": ".",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "dev": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "next dev --port 3000",
+        "cwd": "packages/profile"
+      },
+      "configurations": {}
+    },
+    "build": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "next build",
+        "cwd": "packages/profile"
+      },
+      "configurations": {}
+    },
+    "start": {
+      "executor": "nx:run-commands",
+      "options": {
+        "command": "next start --port 3000",
+        "cwd": "packages/profile"
+      },
+      "configurations": {}
+    }
+  }
+}

@@ -42,3 +42,23 @@ Thumbs.db
 .nx/workspace-data
 .cursor/rules/nx-rules.mdc
 .github/instructions/nx.instructions.md
+
+# Next.js
+.next
+out
+.next/dev
+
+# pnpm
+.pnpm-store
+
+# env and secrets
+.env
+.env*.local
+*.pem
+
+# logs
+*.log
+error.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
