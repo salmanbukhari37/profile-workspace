@@ -4,6 +4,8 @@ import { Syne, DM_Sans } from 'next/font/google';
 import { ClarityScript } from '../components/ClarityScript';
 import './globals.css';
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://salmanbukhari.com';
+
 const syne = Syne({
   subsets: ['latin'],
   variable: '--font-syne',
@@ -17,7 +19,7 @@ const dmSans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://profile.salmanbukhari37.workers.dev'),
+  metadataBase: new URL(siteUrl),
   title: 'Salman Bukhari — Senior Software Engineer',
   description:
     '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next';
 
 export const dynamic = 'force-static';
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://salmanbukhari.com';
 
 export default function robots(): MetadataRoute.Robots {
   return {
@@ -8,7 +9,7 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://profile.salmanbukhari37.workers.dev/sitemap.xml',
-    host: 'https://profile.salmanbukhari37.workers.dev',
+    sitemap: `${siteUrl}/sitemap.xml`,
+    host: siteUrl,
   };
 }
