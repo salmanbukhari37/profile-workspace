@@ -1,3 +1,6 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 
 import { profile, featuredWork, experience, skills, projects, education } from './data';
@@ -100,6 +103,7 @@ function SectionHeading({ number, children }: { number: string; children: React.
 
 const navLinkClass =
   'rounded-lg px-3 py-2.5 text-sm font-medium text-zinc-600 transition-colors hover:bg-zinc-900/[0.04] hover:text-zinc-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500/60';
+const activeNavLinkClass = 'bg-amber-500/15 text-amber-700';
 
 const socialBtnClass =
   'flex h-11 w-11 items-center justify-center rounded-xl border border-zinc-900/[0.08] bg-surface-elevated/80 text-zinc-600 transition-all hover:border-amber-500/40 hover:text-amber-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-amber-500/60';
@@ -126,6 +130,45 @@ const personJsonLd = {
 };
 
 export default function ProfilePage() {
+  const [activeSection, setActiveSection] = useState<(typeof NAV)[number]['id']>(NAV[0].id);
+
+  useEffect(() => {
+    const sectionIds = NAV.map(({ id }) => id);
+
+    const updateActiveSection = () => {
+      const scrollY = window.scrollY;
+      // Line below viewport top: last section whose start is above this line is "active".
+      // (Avoids IntersectionObserver + high thresholds on very tall sections — e.g. Experience —
+      // where intersectionRatio stays below threshold and the nav never switches.)
+      const triggerLine = scrollY + window.innerHeight * 0.22;
+
+      let activeId: (typeof NAV)[number]['id'] = NAV[0].id;
+
+      for (const id of sectionIds) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        const sectionTop = el.getBoundingClientRect().top + scrollY;
+        if (triggerLine >= sectionTop) {
+          activeId = id;
+        }
+      }
+
+      setActiveSection(activeId);
+    };
+
+    updateActiveSection();
+    window.addEventListener('scroll', updateActiveSection, { passive: true });
+    window.addEventListener('resize', updateActiveSection);
+
+    return () => {
+      window.removeEventListener('scroll', updateActiveSection);
+      window.removeEventListener('resize', updateActiveSection);
+    };
+  }, []);
+
+  const getNavItemClass = (id: (typeof NAV)[number]['id']) =>
+    `${navLinkClass} ${activeSection === id ? activeNavLinkClass : ''}`;
+
   return (
     <>
       <script
@@ -171,7 +214,13 @@ export default function ProfilePage() {
             {/* Desktop nav */}
             <nav className="mt-10 hidden w-full flex-col gap-0.5 border-t border-zinc-900/[0.08] pt-8 lg:flex" aria-label="Page sections">
               {NAV.map((item) => (
-                <a key={item.id} href={`#${item.id}`} className={navLinkClass}>
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={getNavItemClass(item.id)}
+                  aria-current={activeSection === item.id ? 'page' : undefined}
+                  onClick={() => setActiveSection(item.id)}
+                >
                   {item.label}
                 </a>
               ))}
@@ -186,7 +235,13 @@ export default function ProfilePage() {
             </summary>
             <nav className="mt-3 flex flex-col gap-0.5 rounded-xl border border-zinc-900/[0.08] bg-surface/90 p-2" aria-label="Page sections">
               {NAV.map((item) => (
-                <a key={item.id} href={`#${item.id}`} className={navLinkClass}>
+                <a
+                  key={item.id}
+                  href={`#${item.id}`}
+                  className={getNavItemClass(item.id)}
+                  aria-current={activeSection === item.id ? 'page' : undefined}
+                  onClick={() => setActiveSection(item.id)}
+                >
                   {item.label}
                 </a>
               ))}

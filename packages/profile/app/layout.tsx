@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://profile.salmanbukhari37.workers.dev'),
   title: 'Salman Bukhari — Senior Software Engineer',
   description:
-    '10+ years of experience in full-stack development with React, Next.js, Node.js, and more. Based in Islamabad, Pakistan.',
+    '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
   alternates: {
     canonical: '/',
   },
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
     url: '/',
     title: 'Salman Bukhari — Senior Software Engineer',
     description:
-      '10+ years of experience in full-stack development with React, Next.js, Node.js, and more. Based in Islamabad, Pakistan.',
+      '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
     siteName: 'Salman Bukhari Portfolio',
     images: [
       {
@@ -44,7 +44,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Salman Bukhari — Senior Software Engineer',
     description:
-      '10+ years of experience in full-stack development with React, Next.js, Node.js, and more. Based in Islamabad, Pakistan.',
+      '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
     images: ['/profile-photo.png'],
   },
   robots: {

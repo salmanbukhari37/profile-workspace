@@ -9,7 +9,7 @@ export const profile = {
   /** Served from `public/profile-photo.png` */
   photoSrc: '/profile-photo.png',
   summary:
-    '10+ years of experience collaborating with leading technology enterprises and startups across Pakistan, the US, the UK, and the UAE. Deep expertise in developer documentation, software design, security, CI/CD pipelines, and modern stacks — React, Next.js, TypeScript, Node.js, NestJS, and more.',
+    '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
 };
 
 /** Highlighted public work: developer portals, API references, and integration guides. */
