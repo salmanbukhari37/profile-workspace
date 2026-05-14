@@ -3,7 +3,9 @@
  * Deploy with `wrangler deploy` from this package directory (see CI).
  */
 interface Env {
-  ASSETS: Pick<typeof globalThis, 'fetch'>;
+  ASSETS: {
+    fetch(input: Request | URL | string, init?: RequestInit): Promise<Response>;
+  };
 }
 
 export default {

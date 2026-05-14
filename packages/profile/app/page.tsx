@@ -194,7 +194,7 @@ export default function ProfilePage() {
               />
             </div>
 
-            <p className="mb-1 font-heading text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-zinc-600">Portfolio</p>
+            <p className="mb-1 font-heading text-[0.65rem] font-semibold uppercase tracking-[0.35em] text-zinc-600">Portfolios</p>
             <h1 className="font-heading text-xl font-bold tracking-tight text-zinc-900 sm:text-2xl">{profile.name}</h1>
             <p className="mt-1 text-sm font-medium text-amber-600/90">{profile.title}</p>
             <p className="mt-3 flex items-center justify-center gap-1.5 text-xs text-zinc-500 lg:justify-start">
