@@ -1,0 +1,9 @@
+# Deploys static files from `out/` (produced by `nx build profile`) to the Worker named `profile`.
+# This replaces the Worker script on each deploy; custom routes (e.g. custom domain) stay in the dashboard.
+name = "profile"
+main = "worker.ts"
+compatibility_date = "2026-05-01"
+
+[assets]
+directory = "out"
+binding = "ASSETS"
