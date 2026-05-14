@@ -1,0 +1,62 @@
+# Deploy static export (packages/profile/out) to Cloudflare Pages on push to main.
+#
+# GitHub repository secrets (Settings → Secrets and variables → Actions):
+#   CLOUDFLARE_API_TOKEN          — Create at https://dash.cloudflare.com/profile/api-tokens
+#                                   Template: "Edit Cloudflare Workers" or custom with
+#                                   Account → Cloudflare Pages → Edit (and Read).
+#   CLOUDFLARE_ACCOUNT_ID         — Workers & Pages overview → Account ID in the sidebar.
+#   CLOUDFLARE_PAGES_PROJECT_NAME — Pages project name (create an empty Pages project first if needed).
+#
+# Optional (same names as packages/profile/.env.example) for correct production analytics IDs:
+#   NEXT_PUBLIC_GTM_ID, NEXT_PUBLIC_CLARITY_ID
+name: Deploy Cloudflare Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  deployments: write
+
+concurrency:
+  group: deploy-cloudflare-pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - run: pnpm install --frozen-lockfile
+
+      - name: Build profile (static export)
+        run: pnpm exec nx build profile
+        env:
+          NEXT_PUBLIC_GTM_ID: ${{ secrets.NEXT_PUBLIC_GTM_ID }}
+          NEXT_PUBLIC_CLARITY_ID: ${{ secrets.NEXT_PUBLIC_CLARITY_ID }}
+
+      - name: Deploy to Cloudflare Pages
+        id: deploy
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          command: pages deploy packages/profile/out --project-name=${{ secrets.CLOUDFLARE_PAGES_PROJECT_NAME }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Print deployment URL
+        env:
+          DEPLOYMENT_URL: ${{ steps.deploy.outputs.deployment-url }}
+        run: echo "Deployed to $DEPLOYMENT_URL"

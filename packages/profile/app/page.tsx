@@ -5,6 +5,8 @@ import Image from 'next/image';
 
 import { profile, featuredWork, experience, skills, projects, education } from './data';
 
+const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://salmanbukhari.com').replace(/\/$/, '');
+
 const NAV = [
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
@@ -117,8 +119,8 @@ const personJsonLd = {
   name: profile.name,
   jobTitle: profile.title,
   description: profile.summary,
-  image: 'https://profile.salmanbukhari37.workers.dev/profile-photo.png',
-  url: 'https://profile.salmanbukhari37.workers.dev',
+  image: `${siteUrl}/profile-photo.png`,
+  url: siteUrl,
   email: `mailto:${profile.email}`,
   telephone: profile.phone,
   address: {
