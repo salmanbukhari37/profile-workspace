@@ -9,6 +9,9 @@
 #
 # Optional (same names as packages/profile/.env.example) for correct production analytics IDs:
 #   NEXT_PUBLIC_GTM_ID, NEXT_PUBLIC_CLARITY_ID
+#
+# Wrangler is a root devDependency so cloudflare/wrangler-action can run `pnpm exec wrangler`
+# without `pnpm add` (pnpm workspaces require -w for root adds, which the action does not use).
 name: Deploy Cloudflare Pages
 
 on:
