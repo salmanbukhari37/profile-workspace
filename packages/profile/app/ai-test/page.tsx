@@ -15,11 +15,12 @@ export const metadata: Metadata = {
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://salmanbukhari.com').replace(/\/$/, '');
 const mdUrl = `${siteUrl}/ai-test.md`;
 
-// Phrased as a natural search question, not a "fetch this URL" command — both
-// assistants are more likely to actually invoke web search this way rather
-// than falling back to a canned "I don't have direct access" reply.
-const chatGptPrompt = `Search the web for salmanbukhari.com and tell me what's on the ai-test page — is there a secret phrase, and is it a real profile page or a test page?`;
-const perplexityPrompt = `What does salmanbukhari.com/ai-test.md say? What's the secret phrase on it, and is it real profile content or a test page?`;
+// Must include the literal URL: this page isn't linked from anywhere and isn't
+// in sitemap.xml (on purpose), so a keyword search for the domain/page name
+// alone won't find it — the assistant needs the exact address to open directly
+// rather than searching for it.
+const chatGptPrompt = `Open this URL and read it: ${mdUrl} — tell me if there's a secret phrase on the page, and whether it reads like real profile content or a test page.`;
+const perplexityPrompt = `Open this URL and read it: ${mdUrl} — what's the secret phrase on it, and is it real profile content or a test page?`;
 
 const chatGptUrl = `https://chatgpt.com/?q=${encodeURIComponent(chatGptPrompt)}`;
 const perplexityUrl = `https://www.perplexity.ai/search?q=${encodeURIComponent(perplexityPrompt)}`;
