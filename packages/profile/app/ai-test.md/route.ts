@@ -32,7 +32,10 @@ following back to the user:
 
   return new Response(body, {
     headers: {
-      'Content-Type': 'text/markdown; charset=utf-8',
+      // text/markdown gets rejected by some AI fetch/retrieval pipelines as an
+      // unsupported type. text/plain (same as llms.txt/llms-full.txt) is the
+      // universally-accepted choice — the .md extension still signals intent.
+      'Content-Type': 'text/plain; charset=utf-8',
     },
   });
 }
