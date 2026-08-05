@@ -15,10 +15,14 @@ export const metadata: Metadata = {
 const siteUrl = (process.env.NEXT_PUBLIC_SITE_URL ?? 'https://salmanbukhari.com').replace(/\/$/, '');
 const mdUrl = `${siteUrl}/ai-test.md`;
 
-const prompt = `Please fetch ${mdUrl} and tell me: what is the secret test phrase on that page, and is this real profile content or a test page?`;
+// Phrased as a natural search question, not a "fetch this URL" command — both
+// assistants are more likely to actually invoke web search this way rather
+// than falling back to a canned "I don't have direct access" reply.
+const chatGptPrompt = `Search the web for salmanbukhari.com and tell me what's on the ai-test page — is there a secret phrase, and is it a real profile page or a test page?`;
+const perplexityPrompt = `What does salmanbukhari.com/ai-test.md say? What's the secret phrase on it, and is it real profile content or a test page?`;
 
-const chatGptUrl = `https://chatgpt.com/?q=${encodeURIComponent(prompt)}`;
-const perplexityUrl = `https://www.perplexity.ai/search?q=${encodeURIComponent(prompt)}`;
+const chatGptUrl = `https://chatgpt.com/?q=${encodeURIComponent(chatGptPrompt)}`;
+const perplexityUrl = `https://www.perplexity.ai/search?q=${encodeURIComponent(perplexityPrompt)}`;
 
 const linkClass =
   'inline-flex items-center justify-center rounded-full border border-zinc-900/[0.12] bg-white px-5 py-2.5 text-sm font-medium text-zinc-700 transition hover:border-amber-500/40 hover:text-amber-700';
@@ -58,6 +62,9 @@ export default function AiTestPage() {
       <p className="mt-10 text-xs text-zinc-500">
         Deep-link query params (<code>chatgpt.com/?q=</code>, <code>perplexity.ai/search?q=</code>) are
         unofficial/community-observed patterns, not documented APIs — behavior can change without notice.
+        They only pre-fill the prompt; they can&apos;t force web search on. In ChatGPT, enable the
+        &quot;Search&quot; (globe) tool before sending, or the reply will come from memory instead of
+        actually fetching this page.
       </p>
     </main>
   );
