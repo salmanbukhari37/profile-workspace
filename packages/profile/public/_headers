@@ -1,0 +1,10 @@
+# Cloudflare Workers static-asset headers (https://developers.cloudflare.com/workers/static-assets/headers/).
+# Copied to `out/_headers` by the Next.js build; parsed by Workers, not served.
+#
+# Wrangler infers Content-Type from the file extension at upload, so `.md` files
+# are served as `text/markdown` — which some AI fetch/retrieval pipelines reject
+# as an unsupported type. Serve them as plain text instead. This has to happen
+# here: `output: 'export'` drops the headers a route handler sets, and asset
+# requests bypass `worker.ts` entirely.
+/*.md
+  Content-Type: text/plain; charset=utf-8

@@ -30,11 +30,12 @@ following back to the user:
    Salman's real experience?
 `;
 
+  // NOTE: `output: 'export'` writes this body to `out/ai-test.md` and DROPS the
+  // headers below — in production the Content-Type is inferred from the file
+  // extension and overridden in `public/_headers`. The header here only applies
+  // under `next dev`.
   return new Response(body, {
     headers: {
-      // text/markdown gets rejected by some AI fetch/retrieval pipelines as an
-      // unsupported type. text/plain (same as llms.txt/llms-full.txt) is the
-      // universally-accepted choice — the .md extension still signals intent.
       'Content-Type': 'text/plain; charset=utf-8',
     },
   });
