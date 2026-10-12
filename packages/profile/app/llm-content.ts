@@ -30,7 +30,7 @@ export function buildLlmsIndex(): string {
 
 ## Optional
 
-- [Featured public work](${siteUrl}/llms-full.txt#featured-work): PayPal, Juniper Networks, and Verizon developer docs
+- [Featured public work](${siteUrl}/llms-full.txt#featured-work): PayPal and Verizon developer portals
 `;
 }
 
@@ -60,7 +60,7 @@ ${featuredWork
   .map((item) => `- [${item.title}](${item.link}): ${item.description} (${item.org}; ${item.tags.join(', ')})`)
   .join('\n')}
 
-## Projects
+## Projects & Achievements
 
 ${projects
   .map((project) => `- ${project.title}${project.link ? ` (${project.link})` : ''}: ${project.description} [${project.tags.join(', ')}]`)

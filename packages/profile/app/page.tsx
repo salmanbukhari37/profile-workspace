@@ -119,7 +119,7 @@ const personJsonLd = {
   name: profile.name,
   jobTitle: profile.title,
   description: profile.summary,
-  image: `${siteUrl}/profile-photo.png`,
+  image: `${siteUrl}/profile_picture.png`,
   url: siteUrl,
   email: `mailto:${profile.email}`,
   telephone: profile.phone,
@@ -291,9 +291,11 @@ export default function ProfilePage() {
                     <div>
                       <div className="mb-1 flex flex-wrap items-center gap-2">
                         <h3 className="font-heading text-lg font-semibold text-zinc-900">{job.role}</h3>
-                        <span className="rounded-md border border-zinc-900/[0.08] bg-zinc-900/[0.03] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-zinc-600">
-                          {job.type}
-                        </span>
+                        {job.type ? (
+                          <span className="rounded-md border border-zinc-900/[0.08] bg-zinc-900/[0.03] px-2 py-0.5 text-[0.65rem] font-semibold uppercase tracking-wider text-zinc-600">
+                            {job.type}
+                          </span>
+                        ) : null}
                       </div>
                       <p className="flex flex-wrap items-center gap-1.5 text-sm font-medium text-amber-700/85">
                         <BriefcaseIcon /> {job.company}
@@ -367,7 +369,7 @@ export default function ProfilePage() {
           </section>
 
           <section id="projects" className="animate-slide-up delay-200 mb-20 scroll-mt-8 lg:scroll-mt-10">
-            <SectionHeading number="03">Projects</SectionHeading>
+            <SectionHeading number="03">Projects &amp; Achievements</SectionHeading>
             <div className="grid gap-5 sm:grid-cols-2">
               {projects.map((project, i) => (
                 <article key={i} className={`${cardClass} group`}>

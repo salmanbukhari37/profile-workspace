@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { profile } from './data';
 import { Syne, DM_Sans } from 'next/font/google';
 
 import { ClarityScript } from '../components/ClarityScript';
@@ -20,34 +21,31 @@ const dmSans = DM_Sans({
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
-  title: 'Salman Bukhari — Senior Software Engineer',
-  description:
-    '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
+  title: `${profile.name} — ${profile.title}`,
+  description: profile.summary,
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     url: '/',
-    title: 'Salman Bukhari — Senior Software Engineer',
-    description:
-      '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
+    title: `${profile.name} — ${profile.title}`,
+    description: profile.summary,
     siteName: 'Salman Bukhari Portfolio',
     images: [
       {
-        url: '/profile-photo.png',
-        width: 1200,
-        height: 1200,
+        url: '/profile_picture.png',
+        width: 1254,
+        height: 1254,
         alt: 'Salman Bukhari — professional headshot',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Salman Bukhari — Senior Software Engineer',
-    description:
-      '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
-    images: ['/profile-photo.png'],
+    title: `${profile.name} — ${profile.title}`,
+    description: profile.summary,
+    images: ['/profile_picture.png'],
   },
   robots: {
     index: true,

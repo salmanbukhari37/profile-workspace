@@ -1,159 +1,176 @@
 export const profile = {
   name: 'Salman Bukhari',
-  title: 'Senior Software Engineer',
+  title: 'Senior Full-Stack Software Engineer',
   location: 'Islamabad, Pakistan',
   email: 'salmanbukhari37@gmail.com',
-  phone: '+92-334-9081615',
+  phone: '+92 323 9699754',
   github: 'https://github.com/salmanbukhari37',
   linkedin: 'https://linkedin.com/in/salman-bukhari-a7b84072',
-  /** Served from `public/profile-photo.png` */
-  photoSrc: '/profile-photo.png',
+  /** Served from `public/profile_picture.png` */
+  photoSrc: '/profile_picture.png',
   summary:
-    '10+ years of experience building scalable digital products for leading enterprises and startups. Specialized in developer documentation, software architecture, application security, CI/CD automation, and modern technologies including React, Next.js, TypeScript, Node.js, and NestJS.',
+    'Senior Full-Stack Software Engineer with 11+ years of experience building enterprise web applications and developer platforms. Strong in React, Next.js, TypeScript, Node.js, NestJS, PHP, REST APIs, application architecture, security, and CI/CD. Experienced in AI-assisted developer tooling, technical documentation platforms, and scalable backend services.',
 };
 
 /** Highlighted public work: developer portals, API references, and integration guides. */
 export const featuredWork = [
   {
-    title: 'PayPal Server SDK for Java',
-    org: 'PayPal Developer',
+    title: 'PayPal Developer Portal',
+    org: 'PayPal',
     description:
-      'Getting-started and integration documentation for PayPal’s Java Server SDK — server-side payments, SDK setup, and API usage patterns.',
+      'Delivered developer portal work tailored to PayPal’s enterprise functionality and brand requirements.',
     link: 'https://developer.paypal.com/serversdk/java/getting-started/how-to-get-started',
-    tags: ['Java', 'REST', 'SDK', 'Payments'],
+    tags: ['Developer portals', 'Enterprise delivery'],
   },
   {
-    title: 'Juniper Mist — REST API',
-    org: 'Juniper Networks',
-    description:
-      'Mist cloud networking platform HTTP API reference, including account and self-service endpoints used by operators and integrators.',
-    link: 'https://www.juniper.net/documentation/us/en/software/mist/api/http/api/self/account/get-self',
-    tags: ['OpenAPI', 'Networking', 'Cloud Wi-Fi'],
-  },
-  {
-    title: 'Verizon ThingSpace — IoT APIs',
+    title: 'Verizon Developer Portal',
     org: 'Verizon',
     description:
-      'ThingSpace IoT connectivity documentation and guided walkthroughs for device activation, SIM lifecycle, and platform integrations.',
+      'Delivered developer portal work tailored to Verizon’s enterprise functionality and brand requirements.',
     link: 'https://thingspace.verizon.com/documentation/api-documentation.html#/http/guided-walkthroughs/iot-how-to-s/guided-walkthroughs/how-to-activate-a-device',
-    tags: ['IoT', 'Connectivity', 'API docs'],
+    tags: ['Developer portals', 'Enterprise delivery'],
   },
 ] as const;
 
 export const experience = [
   {
-    role: 'Sr. Software Engineer',
+    role: 'Senior Software Engineer',
     company: 'APIMatic',
     type: 'Hybrid',
     location: 'Islamabad, Pakistan',
     period: 'Feb 2025 — Present',
     highlights: [
-      'Migrated documentation from Markdown to MDX, enabling dynamic rendering with custom React components.',
-      'Reduced unnecessary re-renders, significantly improving application responsiveness.',
-      'Integrated Chromatic into CI/CD for visual CSS/UI change tracking before deployment.',
-      'Collaborated with product & design teams for consistent component styling across platforms.',
+      'Developed enterprise developer-platform features with React, Next.js, TypeScript, Node.js, and NestJS, including secure REST APIs, authentication, and reusable services.',
+      'Improved portal interfaces, SDK overview pages, and interactive API playground functionality.',
+      'Integrated Mixpanel analytics to track page views and navigation interactions across developer portals.',
+      'Built configurable frontend components for enterprise branding and documentation needs.',
+      'Resolved static-site-generation blockers and collaborated with engineering, design, and QA teams to ship portal features.',
     ],
   },
   {
-    role: 'Sr. Software Engineer',
+    role: 'Senior Software Engineer',
     company: 'JiBe ERP',
     type: 'Remote',
-    location: '',
-    period: 'Apr 2023 — Mar 2025',
+    location: 'Islamabad, Pakistan',
+    period: 'Apr 2023 — Feb 2025',
     highlights: [
-      'Spearheaded full-stack projects integrating front-end and back-end systems for better performance.',
-      'Delivered projects within budget and compliance requirements while optimizing performance.',
-      'Architected scalable systems that reduced technical debt and improved operational efficiency.',
+      'Led full-stack feature delivery, connecting frontend interfaces with backend systems to support ERP workflows and user experience.',
+      'Designed scalable, extensible application architecture to reduce technical debt and improve maintainability as business needs evolved.',
+      'Delivered application improvements while balancing performance, budget, and compliance requirements.',
     ],
   },
   {
-    role: 'Sr. Full Stack Developer',
+    role: 'Senior Full-Stack Developer',
     company: 'Renegade Group of Furniture',
-    type: 'Remote',
+    type: '',
     location: '',
     period: 'Oct 2019 — Apr 2023',
     highlights: [
-      'Led feature development end-to-end across the full technology stack.',
-      'Applied critical thinking to break down complex problems and deliver solutions on tight deadlines.',
-      'Improved efficiency and productivity through rapid skill acquisition and application.',
+      'Delivered full-stack development work under tight deadlines, using structured problem-solving to evaluate implementation options and resolve issues.',
+      'Adapted to changing technical requirements and adopted new skills and tools to support delivery.',
     ],
   },
   {
-    role: 'Full Stack Developer',
+    role: 'Full-Stack Developer',
     company: 'MicroAgility',
-    type: 'On-site',
-    location: 'Islamabad, Pakistan',
-    period: 'Aug 2018 — Sep 2019',
+    type: '',
+    location: '',
+    period: 'Aug 2018 — Oct 2019',
     highlights: [
-      'Planned and created scalable systems for growing companies.',
-      'Gathered and translated client requirements into product stories and actionable tasks.',
+      'Planned and developed scalable, extensible systems to support growing businesses.',
+      'Gathered client requirements and translated them into product stories and actionable engineering tasks.',
     ],
   },
   {
-    role: 'Asst. Web Administrator',
-    company: 'Population Welfare Dept.',
-    type: 'On-site',
+    role: 'Assistant Web Administrator',
+    company: 'Population Welfare Department',
+    type: '',
     location: 'Peshawar, Pakistan',
     period: 'Oct 2016 — Jan 2018',
     highlights: [
-      'Designed and maintained websites and online applications.',
-      'Reviewed site content regularly for accuracy and functionality.',
+      'Reviewed websites and content for accuracy, functionality, and consistency.',
+      'Designed websites and web applications to support organizations’ online presence.',
     ],
   },
   {
     role: 'PHP Developer',
     company: 'Tech Wizards',
-    type: 'On-site',
-    location: 'Peshawar, Pakistan',
+    type: '',
+    location: '',
     period: 'Mar 2015 — Oct 2016',
     highlights: [
-      'Redesigned sites to enhance navigation and improve visual appeal.',
-      'Introduced cost and benefits analysis to identify and correct problems with existing network architecture.',
+      'Redesigned websites to improve navigation and visual presentation.',
+      'Evaluated existing technical issues and proposed cost-conscious improvements.',
     ],
   },
 ];
 
 export const skills = {
-  'Front-end': [
-    'React.js',
-    'Next.js',
-    'Vue.js',
-    'TypeScript',
-    'Babel',
-    'Tailwind CSS',
+  Frontend: ['React', 'Next.js', 'TypeScript', 'JavaScript', 'Babel'],
+  'Backend & APIs': [
+    'Node.js',
+    'NestJS',
+    'Express.js',
+    'PHP',
+    'REST APIs',
+    'Authentication',
+    'Application security',
   ],
-  'Back-end': ['Node.js', 'NestJS', 'Express', 'PHP', 'RabbitMQ'],
-  Database: ['MongoDB', 'SQL Server', 'Redis', 'Firebase'],
-  DevOps: ['Docker', 'CI/CD Pipelines', 'Chromatic', 'Git'],
+  'Databases & Messaging': [
+    'PostgreSQL',
+    'MySQL',
+    'MongoDB',
+    'SQL Server',
+    'Redis',
+    'Firebase',
+    'RabbitMQ',
+  ],
+  'Architecture & Delivery': [
+    'Software architecture',
+    'Scalable systems',
+    'AWS',
+    'Docker',
+    'CI/CD',
+    'GitHub Actions',
+    'JSON Schema',
+    'MDX',
+    'CLI tooling',
+  ],
+  'AI & Developer Tools': [
+    'Claude',
+    'Cursor',
+    'Model Context Protocol (MCP)',
+    'AI-assisted development workflows',
+  ],
 };
 
 export const projects = [
   {
-    title: 'APIMatic Developer Portal',
+    title: 'Enterprise Developer Portals',
     description:
-      'Modern developer documentation platform migrated from Markdown to MDX with custom React components, Chromatic-powered visual testing, and optimized rendering performance.',
-    tags: ['React', 'MDX', 'TypeScript', 'Chromatic', 'CI/CD'],
+      'Delivered developer portals for PayPal, Verizon, Worldpay, and Shell, tailored to enterprise functionality and brand requirements.',
+    tags: ['Developer platforms', 'Enterprise delivery'],
     link: '',
   },
   {
-    title: 'JiBe ERP Platform',
+    title: 'JSON Schema-Driven React Form Engine',
     description:
-      'Enterprise resource planning system with full-stack architecture, budget-compliant delivery, and scalable design that reduced technical debt for growing organizations.',
-    tags: ['Next.js', 'Node.js', 'MongoDB', 'TypeScript'],
+      'Designed a reusable React form engine driven by JSON Schema for dynamic form generation, validation, and configurable enterprise workflows.',
+    tags: ['React', 'JSON Schema', 'Form validation'],
     link: '',
   },
   {
-    title: 'Renegade Furniture E-commerce',
+    title: 'AI-Assisted Development & CLI Tooling',
     description:
-      'End-to-end e-commerce platform for a furniture group, featuring product catalog management, order processing, and a responsive storefront.',
-    tags: ['React', 'Node.js', 'Express', 'MongoDB'],
+      'Developed AI-assisted workflows using Claude, Cursor, and MCP servers, alongside CLI tooling to automate repetitive development tasks.',
+    tags: ['Claude', 'Cursor', 'MCP', 'CLI tooling'],
     link: '',
   },
   {
-    title: 'MicroAgility Client Solutions',
+    title: 'Interactive Documentation with MDX',
     description:
-      'Scalable, extensible client systems built from requirements gathering to deployment, turning product stories into actionable software.',
-    tags: ['Full Stack', 'Node.js', 'React', 'SQL Server'],
+      'Led the migration from Markdown to MDX, enabling interactive React components in technical documentation.',
+    tags: ['Markdown', 'MDX', 'React'],
     link: '',
   },
 ];
@@ -161,6 +178,6 @@ export const projects = [
 export const education = {
   degree: 'Bachelor of Science — Computer Science',
   school: 'University of Peshawar',
-  location: 'Peshawar, Khyber Pakhtunkhwa',
-  period: '2010 — 2014',
+  location: 'Peshawar, Pakistan',
+  period: 'Sep 2014',
 };
